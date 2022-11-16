@@ -1,13 +1,19 @@
-import { Component, Input } from '@angular/core'
-import { Address } from '../parent.component'
+import { Component, EventEmitter, Output } from '@angular/core'
 
+export interface Grade {
+  math: number
+  physic: number
+}
 @Component({
   selector: 'inst-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
 })
 export class ChildComponent {
-  name = 'Artem'
-  @Input() surnameProps?: string
-  @Input() address?: Address
+  @Output() sendGradeEvent = new EventEmitter<Grade>()
+  sendGradeHandler() {
+    const math = 5
+    const physic = 4
+    this.sendGradeEvent.emit({ math, physic })
+  }
 }
