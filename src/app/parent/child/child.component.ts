@@ -4,16 +4,17 @@ export interface Grade {
   math: number
   physic: number
 }
+
 @Component({
   selector: 'inst-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
 })
 export class ChildComponent {
-  @Output() sendGradeEvent = new EventEmitter<Grade>()
+  @Output() sendGradeEvent = new EventEmitter<string>()
+  inputText = ''
+
   sendGradeHandler() {
-    const math = 5
-    const physic = 4
-    this.sendGradeEvent.emit({ math, physic })
+    this.sendGradeEvent.emit(this.inputText)
   }
 }

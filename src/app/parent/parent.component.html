@@ -1,5 +1,4 @@
 <div>
-  <h1>math: {{ math }}</h1>
-  <h1>physic: {{ physic }}</h1>
   <inst-child (sendGradeEvent)="getGrade($event)"></inst-child>
+  <h1>{{ grades | json }}</h1>
 </div>
