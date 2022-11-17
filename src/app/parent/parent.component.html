@@ -1,24 +1,11 @@
-<div *ngIf="isLoading">...loading</div>
-<ng-container *ngIf="!isLoading">
-  <inst-child (sendGradeEvent)="getGrade($event)"></inst-child>
-  <h1 *ngFor="let element of grades; index as i; count as count; even as even">
-    {{ i }}-{{ element }} count: {{ count }} even: {{ even }}
-  </h1>
-  <div *ngFor="let lesson of lessons">
-    <h3>{{ lesson.title }}</h3>
-    <h3>WeekGrade:</h3>
-    <div *ngFor="let grade of lesson.weekGrade">
-      {{ grade.gradeItem }}
+<div>
+  <h1 *ngFor="let fruit of fruits; even as even; odd as odd">
+    <div
+      *ngIf="fruit.price > 7"
+      [ngClass]="{ success: even, error: odd, highlight: fruit.price > 15 }"
+    >
+      <span>name: {{ fruit.name }} </span>
+      <span>price: {{ fruit.price }}</span>
     </div>
-  </div>
-</ng-container>
-<input [(ngModel)]="value" />
-<div [ngSwitch]="value">
-  <div *ngSwitchCase="1">One</div>
-  <div *ngSwitchCase="2">Two</div>
-  <div *ngSwitchCase="3">Three</div>
-  <div *ngSwitchDefault class="error">Unknown number</div>
+  </h1>
 </div>
-<h1 [ngClass]="{ default: true, success: isSuccess, error: !isSuccess }">Lorem ipsum</h1>
-<h1 [ngClass]="{ 'default success': isSuccess }">Lorem ipsum</h1>
-<h1 [ngStyle]="{ color: 'yellow', margin: '20px' }">Lorem ipsum</h1>

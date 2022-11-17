@@ -1,91 +1,24 @@
 import { Component } from '@angular/core'
-
-interface Lesson {
-  id: number
-  title: string
-  weekGrade: WeekGrade[]
+interface Fruit {
+  id: string
+  name: string
+  price: number
 }
-
-interface WeekGrade {
-  id: number
-  gradeItem: number
-}
-
 @Component({
   selector: 'inst-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css'],
 })
 export class ParentComponent {
-  grades: string[] = ['math: 5', 'english: 4']
-  lessons: Lesson[] = [
-    {
-      id: 0,
-      title: 'math',
-      weekGrade: [
-        {
-          id: 0,
-          gradeItem: 5,
-        },
-        {
-          id: 1,
-          gradeItem: 4,
-        },
-        {
-          id: 2,
-          gradeItem: 5,
-        },
-      ],
-    },
-    {
-      id: 1,
-      title: 'physic',
-      weekGrade: [
-        {
-          id: 0,
-          gradeItem: 5,
-        },
-        {
-          id: 1,
-          gradeItem: 3,
-        },
-        {
-          id: 2,
-          gradeItem: 5,
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: 'english',
-      weekGrade: [
-        {
-          id: 0,
-          gradeItem: 5,
-        },
-        {
-          id: 1,
-          gradeItem: 3,
-        },
-        {
-          id: 2,
-          gradeItem: 5,
-        },
-      ],
-    },
+  fruits: Fruit[] = [
+    { id: '1', name: 'apple', price: 10 },
+    { id: '2', name: 'orange', price: 20 },
+    { id: '3', name: 'watermelon', price: 30 },
+    { id: '4', name: 'banana', price: 5 },
+    { id: '5', name: 'pears', price: 12 },
+    { id: '6', name: 'raspberries', price: 18 },
+    { id: '7', name: 'avocados', price: 14 },
+    { id: '8', name: 'mangoes', price: 3 },
+    { id: '9', name: 'kiwifruit', price: 7 },
   ]
-  isLoading = true
-  isSuccess = false
-  value = ''
-
-  constructor() {
-    setTimeout(() => {
-      this.isLoading = false
-      this.isSuccess = true
-    }, 1000)
-  }
-
-  getGrade(value: string) {
-    this.grades.push(value)
-  }
 }
