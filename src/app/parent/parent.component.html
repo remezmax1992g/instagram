@@ -1,5 +1,5 @@
 <div *ngIf="isLoading">...loading</div>
-<ng-container *inIf="!isLoading">
+<ng-container *ngIf="!isLoading">
   <inst-child (sendGradeEvent)="getGrade($event)"></inst-child>
   <h1 *ngFor="let element of grades; index as i; count as count; even as even">
     {{ i }}-{{ element }} count: {{ count }} even: {{ even }}
