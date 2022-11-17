@@ -75,11 +75,14 @@ export class ParentComponent {
     },
   ]
   isLoading = true
+  value = ''
+
   constructor() {
     setTimeout(() => {
       this.isLoading = false
     }, 5000)
   }
+
   getGrade(value: string) {
     this.grades.push(value)
   }
