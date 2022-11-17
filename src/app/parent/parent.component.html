@@ -19,3 +19,5 @@
   <div *ngSwitchCase="3">Three</div>
   <div *ngSwitchDefault class="error">Unknown number</div>
 </div>
+<h1 [ngClass]="{ default: true, success: isSuccess, error: !isSuccess }">Lorem ipsum</h1>
+<h1 [ngClass]="{ 'default success': isSuccess }">Lorem ipsum</h1>
